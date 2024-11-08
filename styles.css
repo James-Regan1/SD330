@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.fridgeDisplay {
+    width: 450px;
+    height: 750px;
+    border: 5px solid black;
+    background-color: grey;
+    padding: 10px;
+    margin: 5px;
+}
+
+.clock {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+}
+
+.buttons {
+    text-align: center;
+    display: none;
+}
+
+.button2 {
+    font-size: 14px;
+    margin: 5px;
+}
+
+.temperature {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tempButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    visibility: hidden; 
+}
+
+.image {
+    margin-top: 20px;
+}
+
+#streamingImage, #browserImage, #fridgeImage, #weatherImage {
+    display: none;
+}
+
+.timerDisplay {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 18px;
+    color: black;
+    display: none;
+}
+
+.shoppingList {
+    margin-top: 20px;
+    display: none;
+}
+
+.shoppingList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shoppingList li {
+    margin-bottom: 10px;
+}
+
+.shoppingList input {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.shoppingList button {
+    margin-top: 12px;
+}

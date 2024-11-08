@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fridge Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="fridgeDisplay" id="display">
+        <div class="clock" id="clock">00:00:00</div>
+
+        <div class="onOffButton">
+            <button onclick="toggleDisplay()" class="button2" id="onOffButton">Turn On</button>
+        </div>
+
+        <div class="buttons">
+            <button onclick="streamingButton()" class="button2" id="streamingButton" disabled>Streaming</button>
+            <button onclick="browserButton()" class="button2" id="browserButton" disabled>Browser</button>
+            <button onclick="insideViewButton()" class="button2" id="insideViewButton" disabled>View Inside</button>
+            <button onclick="toggleClockFormat()" class="button2" id="clockButton" disabled>Switch to 12-hour format</button>
+            <button onclick="weatherButton()" class="button2" id="weatherButton" disabled>Weather</button>
+            <button onclick="startMinuteTimer()" class="button2" id="timerButton">Start Timer</button>
+        </div>
+
+        <div class="temperature" id="temperatureDisplay">-- °F</div>
+        <div class="tempButtons" id="tempButtons">
+            <button onclick="decreaseTemperature()" class="button2" id="decreaseTempButton" disabled>-</button>
+            <button onclick="toggleTempUnit()" class="button2" id="toggleUnitButton" disabled>Toggle °F/°C</button>
+            <button onclick="increaseTemperature()" class="button2" id="increaseTempButton" disabled>+</button>
+        </div>
+
+        <div class="image">
+            <img id="streamingImage" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-pY1CWn_vMe59JTGscpxcA.png" width="450px" height="550px">
+        </div>
+        <div class="image">
+            <img id="browserImage" src="https://duet-cdn.vox-cdn.com/thumbor/0x0:2418x1240/1440x738/filters:focal(1209x620:1210x621):format(webp)/cdn.vox-cdn.com/uploads/chorus_asset/file/20068680/Screen_Shot_2020_07_06_at_10.02.34_AM.png" width="450px" height="550px">
+        </div>
+        <div class="image">
+            <img id="fridgeImage" src="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_730,h_913/k%2Farchive%2F6c0acf743d4d7b4d7dd8dc3b10b837ce88785201" width="450px" height="550px">
+        </div>
+        <div class="image">
+            <img id="weatherImage" src="https://i0.wp.com/goodmorningwilton.com/wp-content/uploads/2016/10/main-story-image-Weather-Graphics.png?fit=2560%2C1440&ssl=1" width="450px" height="550px">
+        </div>
+
+        <div class="timerDisplay" id="timerDisplay">Timer: 01:00</div>
+
+        <div class="shoppingList" id="shoppingList">
+            <h3>Shopping List</h3>
+            <ul id="shoppingListItems">
+                <li>Doritos</li>
+                <li>Oreos</li>
+                <li>Broccoli</li>
+                <li>Butter</li>
+                <li>Popcorn</li>
+            </ul>
+            <input type="text" id="newItem" placeholder="Add a new item">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <audio id="alarmSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

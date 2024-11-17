@@ -1,1 +1,40 @@
-Hello World James Regan
+<!-- This is sample code to get the contents of a GitHub repository -->  
+<!doctype  html >
+<html>
+    <head> 
+	
+	</head>	
+
+	<body onload="Filelist()">
+	<p id="files"> 
+
+
+	<script>
+	
+		
+		function Filelist(){
+			
+		var htmlString = "";
+		
+		// this creates JS object 'data' with a list of files  
+        // change "aptokash/SD330" to your github id and repository name 
+		(async () => {
+			const response = await fetch("https://api.github.com/repos/James-Regan1/SD330/contents/");
+			const data = await response.json();
+    	
+		// loop through the list of files, set "file" to each file name
+    		for (let file of data) {
+				fname = fridge.name;   
+                fname = script.name;
+                fname = styles.name    
+				fpath = "https://James-Regan1.github.io/SD330/" + fname;  
+				
+				htmlString += "<p>" + fname ;
+				htmlString += "<p>" + fpath ;
+			}
+        
+		document.getElementById('files').innerHTML = htmlString;
+		})()
+	
+	}
+</script>

@@ -1,0 +1,156 @@
+{
+  "parkingLots": [
+    {
+      "name": "Mccann Parking Lot",
+      "mapFile": "mapMccann.jpg",
+      "totalSpaces": 300,
+      "comments": "Large parking lot next to the Mccann student center",
+      "location": "Mccann Student Center",
+      "evCharging": "Yes",
+      "openHours": "24/7",
+      "spaces": [
+        {
+          "id": 1,
+          "type": "Student",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 2,
+          "type": "Faculty/Staff",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25T08:30:00",
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 3,
+          "type": "Handicap",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": "2024-11-25T10:00:00",
+          "size": "Large"
+        },
+        {
+          "id": 4,
+          "type": "Student",
+          "status": "Reserved",
+          "filledDateTime": null,
+          "reservedDateTime": "2024-11-25T09:00:00",
+          "size": "Regular"
+        },
+        {
+          "id": 5,
+          "type": "Handicap",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Large"
+        },
+        {
+          "id": 6,
+          "type": "Student",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25T08:15:00",
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 7,
+          "type": "Faculty/Staff",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 8,
+          "type": "Student",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 9,
+          "type": "Student",
+          "status": "Reserved",
+          "filledDateTime": null,
+          "reservedDateTime": "2024-11-25T11:00:00",
+          "size": "Regular"
+        },
+        {
+          "id": 10,
+          "type": "Faculty/Staff",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 11,
+          "type": "Student",
+          "status": "Filled",
+          "filledDateTime": "2024-11-25T08:45:00",
+          "reservedDateTime": null,
+          "size": "Regular"
+        },
+        {
+          "id": 12,
+          "type": "Handicap",
+          "status": "Available",
+          "filledDateTime": null,
+          "reservedDateTime": null,
+          "size": "Large"
+        }
+      ]
+    },
+    {
+      "name": "North End Parking",
+      "mapFile": "mapNorthEnd.jpg",
+      "totalSpaces": 200,
+      "comments": "Large parking lot on the north end of campus",
+      "location": "North End of campus",
+      "evCharging": "Yes",
+      "openHours": "24/7"
+    },
+    {
+      "name": "Donnely Parking Lot",
+      "mapFile": "mapDonnely.jpg",
+      "totalSpaces": 100,
+      "comments": "Relatively small parking lot outside of Donnely Hall",
+      "location": "Donnely Hall",
+      "evCharging": "No",
+      "openHours": "5:00 AM - 12:00 AM"
+    },
+    {
+      "name": "Dyson Parking lot",
+      "mapFile": "mapDyson.jpg",
+      "totalSpaces": 170,
+      "comments": "Parking lot next to the Dyson cdnter",
+      "location": "Dyson Center",
+      "evCharging": "Yes",
+      "openHours": "6:00 AM - 10:00 PM"
+    },
+    {
+      "name": "Student Center Parking Lot",
+      "mapFile": "mapStudentCenter.jpg",
+      "totalSpaces": 130,
+      "comments": "Parking lot located next to the murray student center and the Midrise residence hall",
+      "location": "Murray Student Center",
+      "evCharging": "No",
+      "openHours": "7:00 AM - 9:00 PM"
+    },
+    {
+      "name": "Fulton Parking Lot",
+      "mapFile": "mapFulton.jpg",
+      "totalSpaces": 80,
+      "comments": "Parking lot next to Fulton",
+      "location": "Fulton",
+      "evCharging": "Yes",
+      "openHours": "6:00 AM - 11:00 PM"
+    }
+  ]
+}

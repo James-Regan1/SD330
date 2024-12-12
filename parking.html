@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marist Parking App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <header class="bg-red-700 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">Marist College Parking</h1>
+            </div>
+            <nav class="space-x-4">
+                <a href="lots.html" class="hover:text-red-200">Lots</a>
+                <a href="404.html" class="hover:text-red-200">Help</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-md overflow-hidden">
+            <div class="bg-red-600 text-white p-6 text-center">
+                <h2 class="text-3xl font-bold mb-2">Welcome to Marist College Parking</h2>
+                <p class="text-red-100">Find, reserve, and manage your parking spots</p>
+            </div>
+            
+            <div class="p-6 space-y-4">
+                <button onclick="navigateTo('lots.html')" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    View Parking Lots
+                </button>
+                
+                <button onclick="navigateTo('404.html')" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Find Available Spaces
+                </button>
+                
+                <button onclick="navigateTo('404.html')" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Reserve a Parking Spot
+                </button>
+                
+                <button onclick="navigateTo('404.html')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Parking Information
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-red-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Marist College Parking. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

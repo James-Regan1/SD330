@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lot Spaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const parkingData = {
+            "parkingLots": [
+                {
+                    "name": "Mccann Parking Lot",
+                    "totalSpaces": 300,
+                    "location": "Mccann Student Center",
+                    "evCharging": "Yes",
+                    "openHours": "24/7",
+                    "spaces": [
+                        {"id": "A1", "status": "Available", "type": "Student", "size": "Compact"},
+                        {"id": "A2", "status": "Filled", "type": "Faculty", "size": "Standard"},
+                        {"id": "A3", "status": "Reserved", "type": "Visitor", "size": "Large"}
+                    ]
+                },
+                {
+                    "name": "North End Parking",
+                    "totalSpaces": 200,
+                    "location": "North End of campus",
+                    "evCharging": "Yes",
+                    "openHours": "24/7",
+                    "spaces": [
+                        {"id": "B1", "status": "Available", "type": "Student", "size": "Standard"},
+                        {"id": "B2", "status": "Filled", "type": "Faculty", "size": "Compact"},
+                        {"id": "B3", "status": "Available", "type": "Handicap", "size": "Large"}
+                    ]
+                },
+                {
+                    "name": "Donnely Parking Lot",
+                    "totalSpaces": 100,
+                    "location": "Donnely Hall",
+                    "evCharging": "No",
+                    "openHours": "5:00 AM - 12:00 AM",
+                    "spaces": [
+                        {"id": "C1", "status": "Reserved", "type": "Visitor", "size": "Standard"},
+                        {"id": "C2", "status": "Available", "type": "Student", "size": "Compact"},
+                        {"id": "C3", "status": "Filled", "type": "Faculty", "size": "Large"}
+                    ]
+                },
+                {
+                    "name": "Dyson Parking lot",
+                    "totalSpaces": 170,
+                    "location": "Dyson Center",
+                    "evCharging": "Yes",
+                    "openHours": "6:00 AM - 10:00 PM",
+                    "spaces": [
+                        {"id": "D1", "status": "Available", "type": "Student", "size": "Compact"},
+                        {"id": "D2", "status": "Filled", "type": "Faculty", "size": "Standard"},
+                        {"id": "D3", "status": "Reserved", "type": "Handicap", "size": "Large"}
+                    ]
+                },
+                {
+                    "name": "Student Center Parking Lot",
+                    "totalSpaces": 130,
+                    "location": "Murray Student Center",
+                    "evCharging": "No",
+                    "openHours": "7:00 AM - 9:00 PM",
+                    "spaces": [
+                        {"id": "E1", "status": "Available", "type": "Student", "size": "Standard"},
+                        {"id": "E2", "status": "Filled", "type": "Visitor", "size": "Compact"},
+                        {"id": "E3", "status": "Reserved", "type": "Faculty", "size": "Large"}
+                    ]
+                },
+                {
+                    "name": "Fulton Parking Lot",
+                    "totalSpaces": 80,
+                    "location": "Fulton",
+                    "evCharging": "Yes",
+                    "openHours": "6:00 AM - 11:00 PM",
+                    "spaces": [
+                        {"id": "F1", "status": "Available", "type": "Student", "size": "Compact"},
+                        {"id": "F2", "status": "Filled", "type": "Handicap", "size": "Standard"},
+                        {"id": "F3", "status": "Reserved", "type": "Faculty", "size": "Large"}
+                    ]
+                }
+            ]
+        };
+             
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lotName = urlParams.get('lot');
+            const lotTitle = document.getElementById('lot-title');
+            const spacesContainer = document.getElementById('spaces-container');
+
+ 
+            if (!lotName) {
+                window.location.href = 'parking.html';
+                return;
+            }
+
+            const lot = parkingData.parkingLots.find(l => l.name === decodeURIComponent(lotName));
+
+
+            if (!lot || !lot.spaces) {
+                window.location.href = 'parking.html';
+                return;
+            }
+
+
+            lotTitle.textContent = `${lot.name} Spaces`;
+
+
+            spacesContainer.innerHTML = '';
+
+  
+            lot.spaces.forEach(space => {
+                const spaceElement = document.createElement('div');
+                spaceElement.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-md p-5 border-2 border-gray-200 
+                        hover:shadow-lg transition duration-300">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-semibold text-red-800">Space #${space.id}</h3>
+                            <span class="bg-gray-200 text-gray-700 
+                                px-3 py-1 rounded-full text-sm">
+                                ${space.status}
+                            </span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <p><strong>Type:</strong> ${space.type}</p>
+                            </div>
+                            <div class="flex items-center">
+                                <p><strong>Size:</strong> ${space.size}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                spacesContainer.appendChild(spaceElement);
+            });
+        }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <header class="bg-red-700 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <h1 class="text-2xl font-bold">Marist College Parking</h1>
+            </div>
+            <nav class="space-x-4">
+                <a href="parking.html" class="hover:text-red-200">Home</a>
+                <a href="parking.html" class="hover:text-red-200">Lots</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-10">
+        <h1 id="lot-title" class="text-4xl font-bold text-center text-red-900 mb-10">Lot Spaces</h1>
+        <div id="spaces-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+    </div>
+
+    <footer class="bg-red-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Marist College Parking. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
